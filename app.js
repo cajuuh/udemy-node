@@ -1,9 +1,13 @@
-// import http from "http";
-const http = require("http");
+const express = require("express");
 
-const routes = require("./routes");
+const app = express();
 
-// event driven architecture
-const server = http.createServer(routes);
+app.use("/add-product", (request, response, next) => {
+  response.send("<h1>Add Product Page</h1>");
+});
 
-server.listen(3000);
+app.use("/", (request, response, next) => {
+  response.send("<h1>Hello from express</h1>");
+});
+
+app.listen(3000);
