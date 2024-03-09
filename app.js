@@ -2,6 +2,7 @@ const path = require("path");
 
 const express = require("express");
 const bodyParser = require("body-parser");
+const expressHbs = require("express-handlebars");
 
 const app = express();
 
@@ -19,7 +20,7 @@ app.use("/admin", adminData.routes);
 app.use(shopRoutes);
 
 app.use((request, response) => {
-  response.status(404).render("404");
+  response.status(404).render("404", { pageTitle: "Page Not Found" });
 });
 
 app.listen(3000);
