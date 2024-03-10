@@ -11,6 +11,13 @@ router.get("/add-product", (request, response, next) => {
   response.render("add-product", {
     pageTitle: "Add Product",
     path: "/admin/add-product",
+    hasProducts: products.length > 0,
+    activeShop: false,
+    activeAddProduct: true,
+    productCSS: true,
+    formsCSS: true,
+    activeAddProduct: true,
+    activeShop: false,
   });
 });
 
